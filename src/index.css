@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  outline: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+label {
+  font-weight: 500;
+}
+
+body {
+  background: linear-gradient(180deg, #42a5f5 0%, #64b5f6 50%, #90caf9 100%);
+  position: relative;
+}
+
+body.cloudy {
+  background: linear-gradient(180deg, #78909c 0%, #90a4ae 50%, #b0bec5 100%);
+}
+
+body.rainy {
+  background: linear-gradient(180deg, #283593 0%, #303f9f 50%, #3949ab 100%);
+}
+
+body.snowy {
+  background: linear-gradient(180deg, #424242 0%, #616161 50%, #757575 100%);
+}
+
+body.foggy {
+  background: linear-gradient(180deg, #546e7a 0%, #607d8b 50%, #78909c 100%);
+}
+
+.drop-shadow-icon {
+  filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5));
+}
+
+/* Stile della barra di scorrimento */
+
+/* Per Firefox */
+.scroll-container {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+}
+
+/* Per Chrome, Safari e Opera */
+.scroll-container::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.scroll-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+}
+
+.scroll-container::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.text-gold {
+  color: #ffd700;
+}
