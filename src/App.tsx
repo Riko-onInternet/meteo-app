@@ -149,10 +149,10 @@ function App() {
     const nextHours = weatherData.weather.hourly.time.slice(currentHourIndex, currentHourIndex + 8)
 
     return (
-      <div className="flex flex-col items-start justify-start w-full h-full gap-4">
+      <div className="flex flex-col items-start justify-start w-full h-full gap-4 px-4">
         <div className="p-6 text-white relative w-full">
-          <div className="px-6">
-            <div className="flex flex-col items-start justify-between mb-10">
+          <div className="px-4">
+            <div className="flex flex-col items-start justify-between mb-4">
               <p className="text-2xl leading-none">
                 {weatherData.location.name}
               </p>
@@ -179,15 +179,17 @@ function App() {
               </p>
             </div>
           </div>
-          <div className="absolute top-[10px] mr-6 right-0 w-2/5 h-max">
+          <div className="absolute top-[1.5rem] mr-6 right-0 w-2/5 h-max">
             <img src={getWeatherImage(weatherData.weather.current.weathercode)} className="object-cover" />
           </div>
         </div>
-        <div className="bg-black/5 rounded-lg p-6 text-white w-full">
-          <div className="flex flex-col gap-4">
-            <h3 className="text-xl font-medium">Previsioni orarie</h3>
 
-            <div className="flex flex-row items-center justify-between overflow-x-auto pb-4 scroll-container">
+        {/* Previsioni orarie */}
+        <div className="bg-black/5 rounded-lg  text-white w-full overflow-hidden">
+          <div className="flex flex-col pt-6 gap-4">
+            <h3 className="text-xl font-medium ml-6">Previsioni orarie</h3>
+
+            <div className="flex flex-row items-center justify-between overflow-x-auto pb-6 scroll-container">
               {nextHours.map((time: string, index: number) => {
                 const actualIndex = currentHourIndex + index
                 const hour = new Date(time).getHours()
@@ -209,6 +211,8 @@ function App() {
             </div>
           </div>
         </div>
+
+        {/* Condizioni dell'aria */}
         <div className="bg-black/5 rounded-lg p-6 text-white w-full">
           <div className="flex flex-col gap-4">
             <h3 className="text-xl font-medium">Condizioni dell'aria</h3>
@@ -274,9 +278,9 @@ function App() {
                     </div>
                     <div className="flex items-center gap-4">
                       <span className="text-white/70">{precipitation} mm</span>
-                      <div className="w-20 text-right">
+                      <div className="w-14 text-right">
                         <span className="font-medium">{temp_max}°</span>
-                        {" "}
+                        {" / "}
                         <span className="text-white/70">{temp_min}°</span>
                       </div>
                     </div>
