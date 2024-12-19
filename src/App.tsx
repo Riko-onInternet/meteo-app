@@ -85,6 +85,18 @@ function App() {
     
     // Aggiungi la nuova classe
     body.classList.add(weatherClass)
+
+    // Aggiorna il theme-color
+    const themeColors = {
+      sunny: '#42a5f5',
+      cloudy: '#78909c',
+      foggy: '#546e7a',
+      rainy: '#283593',
+      snowy: '#424242'
+    }
+    
+    document.querySelector('meta[name="theme-color"]')
+      ?.setAttribute('content', themeColors[weatherClass as keyof typeof themeColors])
   }, [weatherData?.weather?.current?.weathercode])
 
   const handleSearch = async (e: React.FormEvent) => {

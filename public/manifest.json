@@ -1,0 +1,8 @@
+{
+  "name": "Meteo App",
+  "short_name": "Meteo",
+  "theme_color": "#fdf500",
+  "background_color": "#fdf500",
+  "display": "standalone",
+  "start_url": "/"
+} 
