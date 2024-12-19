@@ -149,7 +149,7 @@ function App() {
     const nextHours = weatherData.weather.hourly.time.slice(currentHourIndex, currentHourIndex + 8)
 
     return (
-      <div className="flex flex-col items-start justify-start w-full h-full gap-4 px-4">
+      <div className="flex flex-col items-start justify-start w-full h-full gap-4">
         <div className="p-6 text-white relative w-full">
           <div className="px-4">
             <div className="flex flex-col items-start justify-between mb-4">
@@ -304,7 +304,7 @@ function App() {
   return (
     <div className="w-full h-max">
       {/* Header */}
-      <div className="flex flex-row items-center justify-between max-w-[600px] w-full mx-auto p-4">
+      <div className="flex flex-row items-center justify-between gap-4 max-w-[600px] w-full mx-auto py-4">
         <img src="https://riko-storage.sirv.com/app_meteo/icon.svg" alt="Icona" className="w-10 h-10 filter drop-shadow-icon dark:drop-shadow-none" />
 
         <div className="max-w-[400px] bg-black/5 rounded-lg p-2">
