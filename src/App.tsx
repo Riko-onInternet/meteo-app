@@ -100,8 +100,12 @@ function App() {
   }, [weatherData?.weather?.current?.weathercode])
 
   const handleSearch = async (e: React.FormEvent) => {
+    const input = document.getElementById('search') as HTMLInputElement
+
     e.preventDefault()
     if (!search.trim()) return
+
+    input.blur()
 
     setIsLoading(true)
     setError('')
@@ -326,6 +330,7 @@ function App() {
             </button>
             <input
               type="text"
+              id="search"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               placeholder="Cerca una città"
